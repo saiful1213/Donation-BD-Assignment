@@ -39,14 +39,16 @@
             color: #111111;
             font-weight: 600;
             background-color: #B4F461;
+            border: 0;
         }
     </style>
 </head>
 
 <body class="font-lexend p-2 lg:p-0">
-    <header class="bg-[#F9F7F3] py-6">
+    <header class="py-6 w-full fixed top-0  backdrop-blur-3xl bg-white/50">
         <nav class="flex justify-between max-width">
             <button
+                id="blog-btn"
                 class="bg-primary px-8 py-3 rounded-lg text-title text-xl font-semibold hidden md:flex">Blog</button>
             <h1 class="flex gap-4 items-center"><img src="./assets/logo.png"><span
                     class="text-lg md:text-xl font-semibold text-title">Donate Bangladesh</span></h1>
@@ -57,22 +59,21 @@
             <!-- menu bar -->
             <button class="md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="size-6">
+                    stroke="currentColor" class="size-8">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
                 </svg>
             </button>
         </nav>
+        <!-- tabs -->
+        <div class="flex justify-center gap-4 mt-12">
+            <button class="btn px-8 rounded-lg text-xl active ">Donation</button>
+            <button class="btn px-8 rounded-lg text-xl text-[#111111b3] border-[#1111114d]">History</button>
+        </div>
     </header>
     <main class="bg-[#FFFFFF] my-20">
         <div class="max-width">
-            <!-- tabs -->
-            <div class="flex justify-center gap-4">
-                <button class="btn px-8 rounded-lg text-xl active ">Donation</button>
-                <button class="btn px-8 rounded-lg text-xl text-[#111111b3] border-[#1111114d]">History</button>
-            </div>
-            <!-- cards container-->
-            <div>
+            <div class="mt-56">
                 <!-- card1 -->
                 <div class="flex flex-col lg:flex-row p-8 my-8 gap-8 border border-[#1111111a] rounded-2xl">
                     <!-- card img -->
@@ -101,15 +102,15 @@
                 <div class="flex flex-col lg:flex-row p-8 my-8 gap-8 border border-[#1111111a] rounded-2xl">
                     <!-- card img -->
                     <div class="flex justify-center">
-                        <img src="./assets/noakhali.png">
+                        <img src="./assets/feni.png">
                     </div>
                     <!-- card text -->
                     <div class="lg:w-1/2">
                         <button class="hidden md:flex btn text-xl font-medium text-[#111111b3]">
                             <img src="./assets/coin.png">
-                            0 BDT
+                            600 BDT
                         </button>
-                        <h2 class="text-xl font-bold text-title my-4">Donate for Flood at Noakhali, Bangladesh</h2>
+                        <h2 class="text-xl font-bold text-title my-4">Donate for Flood Relief in Feni,Bangladesh</h2>
                         <p class="text-[#111111b3] font-light"> The recent floods in Noakhali have caused significant
                             damage to homes infrastructure. Your
                             donation will help provide essential supplies and to those affected by this disaster. Every
@@ -125,20 +126,16 @@
                 <div class="flex flex-col lg:flex-row p-8 my-8 gap-8 border border-[#1111111a] rounded-2xl">
                     <!-- card img -->
                     <div class="flex justify-center">
-                        <img src="./assets/noakhali.png">
+                        <img src="./assets/quota-protest.png">
                     </div>
                     <!-- card text -->
                     <div class="lg:w-1/2">
                         <button class="hidden md:flex btn text-xl font-medium text-[#111111b3]">
                             <img src="./assets/coin.png">
-                            0 BDT
+                            2400 BDT
                         </button>
-                        <h2 class="text-xl font-bold text-title my-4">Donate for Flood at Noakhali, Bangladesh</h2>
-                        <p class="text-[#111111b3] font-light"> The recent floods in Noakhali have caused significant
-                            damage to homes infrastructure. Your
-                            donation will help provide essential supplies and to those affected by this disaster. Every
-                            contribution, big or small, makes difference. Please join us in supporting the relief
-                            efforts and making a positive impact on the lives of those in need.</p>
+                        <h2 class="text-xl font-bold text-title my-4">Aid for Injured in the Quota Movement</h2>
+                        <p class="text-[#111111b3] font-light"> The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
                         <input type="text"
                             class="mt-6 mb-4 w-full p-5 rounded-lg border border-[#1111111a] placeholder:text-[#11111166] placeholder:font-light"
                             placeholder="Write Donation Amount">
@@ -149,6 +146,8 @@
         </div>
         </div>
     </main>
+
+    <script src="js/index.js"></script>
 </body>
 
 </html>
