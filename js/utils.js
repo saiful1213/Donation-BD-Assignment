@@ -24,7 +24,7 @@ function inputValidate(donateValueId) {
         alert('you dont have enough balance');
         return false;
     }
-    else if (isNaN(donateValue) || donateValue < 0) {
+    else if (isNaN(donateValue) || donateValue < 1) {
         alert('donation failed! please donate a positive number')
         return false;
     }
