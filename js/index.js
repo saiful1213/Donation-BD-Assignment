@@ -1,5 +1,4 @@
-
-// blog
+// blog file
 const blog = document.getElementById('blog-btn');
 blog.addEventListener('click', () => {
     location.href = './blog.html'
@@ -10,57 +9,7 @@ const donateBtn = document.getElementById('donate-now-btn');
 const donateBtn2 = document.getElementById('donate-now-btn2');
 const donateBtn3 = document.getElementById('donate-now-btn3');
 
-function donateCalculate(donateValueId, donateAmountId) {
-    let myBalance = getTextValueById('my-balance');
-    const donateValue = getInputValueById(donateValueId);
-    let amountValue = getTextValueById(donateAmountId);
-    amountValue += donateValue;
-    myBalance -= donateValue;
-    setInnerTextById('my-balance', myBalance);
-    setInnerTextById(donateAmountId, amountValue);
-}
-
-const historyPageCardContainer = document.getElementById('history-page');
-
-function setHistory(donateTitleId, donateValueId) {
-    const donateTitle = getInnerTextById(donateTitleId);
-    const donateValue = getInputValueById(donateValueId);
-    const newCard = document.createElement('div');
-
-    newCard.innerHTML = `
-        <h2 class="text-[#111111] text-xl font-bold mb-4"> ${donateValue} Taka is Donated for ${donateTitle}</h2>
-                    <p class="text-[#111111b3] font-light">Date: ${new Date().toUTCString()}</p>
-    `;
-    newCard.className = "border border-[#1111111a] bg-white rounded-2xl p-8 mb-6";
-    historyPageCardContainer.appendChild(newCard);
-}
-
-const modal = document.getElementById('my-modal');
-const closeModal = document.getElementById('close-modal');
-
-// show and close modal
-function modalActivity() {
-    modal.classList.remove('hidden');
-    closeModal.addEventListener('click', () => {
-        modal.classList.add('hidden')
-    })
-}
-
-// validate function
-function inputValidate(donateValueId) {
-    const donateValue = getInputValueById(donateValueId);
-    const amountBalance = getTextValueById('my-balance')
-
-    if (amountBalance < donateValue) {
-        alert('you dont have enough balance');
-        return false;
-    }
-    else if (isNaN(donateValue) || donateValue < 0) {
-        alert('donation failed! please donate a positive number')
-        return false;
-    }
-}
-
+// donate now button 1
 donateBtn.addEventListener('click', () => {
     if (inputValidate('input-donate') === false) {
         return;
@@ -72,7 +21,7 @@ donateBtn.addEventListener('click', () => {
         document.getElementById('input-donate').value = '';
     }
 })
-
+// donate now button 2
 donateBtn2.addEventListener('click', () => {
     if (inputValidate('input-donate2') === false) {
         return;
@@ -84,7 +33,7 @@ donateBtn2.addEventListener('click', () => {
         document.getElementById('input-donate2').value = '';
     }
 })
-
+// donate now button 3
 donateBtn3.addEventListener('click', () => {
     if (inputValidate('input-donate3') === false) {
         return;
@@ -97,7 +46,7 @@ donateBtn3.addEventListener('click', () => {
     }
 })
 
-
+// set and remove active button, hide and unhide section page 
 const historyBtn = document.getElementById('history-btn');
 const donationBtn = document.getElementById('donation-btn');
 const donationPage = document.getElementById('donation-page');
